@@ -1,0 +1,24 @@
+@use "../util" as *;
+.screen {
+  background-color: $screen-bg;
+  width: 100%;
+  border: none;
+  border-radius: rem(10);
+  text-align: right;
+  color: $white;
+  font-size: rem(27);
+  letter-spacing: 1px;
+  font-weight: $fw-normal;
+  font-family: $spartan;
+  padding: rem(20);
+  margin-bottom: rem(20);
+  &:focus {
+    outline: none;
+  }
+
+  @include breakpoint(medium) {
+    font-size: rem(32);
+    padding: rem(24);
+    margin-bottom: rem(18);
+  }
+}

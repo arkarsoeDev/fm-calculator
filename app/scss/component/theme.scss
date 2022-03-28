@@ -1,0 +1,97 @@
+@use "../util/" as *;
+.theme1 {
+  background-color: $main-bg;
+}
+
+.theme2 {
+  background-color: $t2-main-bg;
+
+  .header {
+    .title {
+      color: $t2-text-gray;
+    }
+  }
+  .theme-title {
+    color: $t2-text-gray;
+  }
+  .theme-toggle-labels {
+    color: $t2-text-gray;
+  }
+  .theme-toggle-handlers {
+    background-color: $t2-toggle-bg;
+  }
+  .screen {
+    background-color: $t2-screen-bg;
+    color: $t2-text-gray;
+  }
+  .keypad {
+    background-color: $t2-keypad-bg;
+  }
+
+  .key-button {
+    &__normal {
+      background-color: $t2-key-bg-y;
+      box-shadow: 0px 3px 0px $t2-key-shadow-y;
+      color: $t2-text-gray;
+    }
+    &__del,
+    &__reset {
+      background-color: $t2-key-bg-c;
+      box-shadow: 0px 3px 0px $t2-key-shadow-c;
+    }
+    &__reset {
+    }
+    &__equal {
+      background-color: $t2-key-bg-o;
+      box-shadow: 0px 3px 0px $t2-key-shadow-o;
+    }
+  }
+}
+
+.theme3 {
+  background-color: $t3-main-bg;
+
+  .header {
+    .title {
+      color: $t3-text-yellow;
+    }
+  }
+  .theme-title {
+    color: $t3-text-yellow;
+  }
+  .theme-toggle-labels {
+    color: $t3-text-yellow;
+  }
+  .theme-toggle-handlers {
+    background-color: $t3-toggle-bg;
+
+    span {
+      background-color: $t3-key-bg-c;
+    }
+  }
+  .screen {
+    background-color: $t3-screen-bg;
+    color: $t3-text-yellow;
+  }
+  .keypad {
+    background-color: $t3-keypad-bg;
+  }
+
+  .key-button {
+    &__normal {
+      background-color: $t3-key-bg-dv;
+      box-shadow: 0px 3px 0px $t3-key-shadow-dv;
+      color: $t3-text-yellow;
+    }
+    &__del,
+    &__reset {
+      background-color: $t3-key-bg-v;
+      box-shadow: 0px 3px 0px $t3-key-shadow-v;
+    }
+    &__equal {
+      color: $t3-text-blue;
+      background-color: $t3-key-bg-c;
+      box-shadow: 0px 3px 0px $t3-key-shadow-c;
+    }
+  }
+}

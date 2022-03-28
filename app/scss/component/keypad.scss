@@ -1,0 +1,15 @@
+@use "../util/" as *;
+.keypad {
+  background-color: $keypad-bg;
+  border-radius: rem(10);
+  display: grid;
+  gap: rem(12);
+  grid-template-columns: repeat(4, 1fr);
+  padding: rem(20);
+  justify-items: space-between;
+
+  @include breakpoint(medium) {
+    gap: rem(18);
+    padding: rem(23);
+  }
+}

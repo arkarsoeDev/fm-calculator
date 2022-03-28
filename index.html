@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -37,13 +37,68 @@
     </style>
   </head>
   <body>
-    <div class="container"></div>
-    <img src="design/mobile-design-theme-1.jpg" alt="" />
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+    <div class="theme theme1">
+      <div class="container-control">
+        <div class="container">
+          <header class="header">
+            <h1 class="title">calc</h1>
+
+            <div class="theme-toggles">
+              <div class="theme-toggle-labels">
+                <label class="theme-toggle-label theme1-label" for="theme1"
+                  >1</label
+                >
+                <label class="theme-toggle-label theme2-label" for="theme2"
+                  >2</label
+                >
+                <label class="theme-toggle-label theme3-label" for="theme3"
+                  >3</label
+                >
+              </div>
+              <p class="theme-title">Theme</p>
+              <div class="theme-toggle-handlers">
+                <input type="radio" name="toggle" value="theme1" id="theme1" />
+                <input type="radio" name="toggle" value="theme2" id="theme2" />
+                <input type="radio" name="toggle" value="theme3" id="theme3" />
+                <span></span>
+              </div>
+            </div>
+          </header>
+          <main>
+            <section class="input-section">
+              <input type="text" class="screen" />
+            </section>
+            <section>
+              <div class="keypad">
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__del">DEL</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__normal">7</div>
+                <div class="key-button key-button__reset">reset</div>
+                <div class="key-button key-button__equal">=</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Arkar Soe</a>.
+      </div>
     </div>
   </body>
 </html>

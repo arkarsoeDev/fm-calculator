@@ -1,0 +1,73 @@
+@use "../util" as *;
+.theme-toggles {
+  display: inline-grid;
+  row-gap: rem(5);
+  grid-template-areas:
+    ". label label label"
+    "title toggle toggle toggle";
+  width: auto;
+}
+
+.theme-title {
+  grid-area: title;
+  margin-right: rem(20);
+  align-self: center;
+  color: $white;
+  font-size: rem(12);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: $fw-normal;
+}
+
+.theme-toggle-labels {
+  color: $white;
+  grid-area: label;
+  display: inline-grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  font-weight: $fw-normal;
+  font-size: rem(11);
+  padding: 0px 5px;
+  gap: rem(10);
+}
+
+.theme-toggle-handlers {
+  position: relative;
+  grid-area: toggle;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(5);
+  background-color: $toggle-bg;
+  padding: rem(4);
+  border-radius: rem(12);
+
+  input {
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 13px;
+    height: 13px;
+  }
+
+  input[value="theme2"]:checked ~ span {
+    left: 22px;
+  }
+
+  input[value="theme3"]:checked ~ span {
+    left: 40px;
+  }
+
+  span {
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
+    border-radius: 50%;
+    background-color: $key-bg-r;
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+}

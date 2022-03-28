@@ -1,0 +1,61 @@
+@use "../util" as *;
+
+.key-button {
+  text-align: center;
+  border-radius: rem(6);
+  width: rem(50);
+  height: rem(50);
+  line-height: rem(55);
+  font-weight: $fw-normal;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s;
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+
+  @include breakpoint(medium) {
+    width: rem(78);
+    height: rem(45);
+    line-height: rem(50);
+  }
+
+  &__normal {
+    color: $text-gray;
+    box-shadow: 0px 3px 0px $key-shadow-o;
+    background-color: $key-bg-o;
+    font-size: rem(23);
+  }
+  &__del,
+  &__reset {
+    color: $white;
+    box-shadow: 0px 3px 0px $key-shadow-b;
+    background-color: $key-bg-b;
+    font-size: rem(14);
+    font-weight: $fw-normal;
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+      font-size: rem(16);
+    }
+  }
+
+  &__reset {
+    grid-column: span 2;
+  }
+
+  &__equal {
+    grid-column: span 2;
+    color: $white;
+    box-shadow: 0px 3px 0px $key-shadow-r;
+    background-color: $key-bg-r;
+    font-size: rem(20);
+  }
+
+  &__reset,
+  &__equal {
+    width: auto;
+  }
+}
