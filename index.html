@@ -57,37 +57,124 @@
               </div>
               <p class="theme-title">Theme</p>
               <div class="theme-toggle-handlers">
-                <input type="radio" name="toggle" value="theme1" id="theme1" />
-                <input type="radio" name="toggle" value="theme2" id="theme2" />
-                <input type="radio" name="toggle" value="theme3" id="theme3" />
+                <input
+                  type="radio"
+                  name="toggle"
+                  value="theme1"
+                  id="theme1"
+                  class="theme-toggle"
+                />
+                <input
+                  type="radio"
+                  name="toggle"
+                  value="theme2"
+                  id="theme2"
+                  class="theme-toggle"
+                />
+                <input
+                  type="radio"
+                  name="toggle"
+                  value="theme3"
+                  id="theme3"
+                  class="theme-toggle"
+                />
                 <span></span>
               </div>
             </div>
           </header>
           <main>
             <section class="input-section">
-              <input type="text" class="screen" />
+              <div class="screen-block">
+                <input type="text" class="screen" disabled />
+              </div>
             </section>
             <section>
               <div class="keypad">
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__del">DEL</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__normal">7</div>
-                <div class="key-button key-button__reset">reset</div>
-                <div class="key-button key-button__equal">=</div>
+                <div
+                  data-value="7"
+                  class="key-button key-button__normal number"
+                >
+                  7
+                </div>
+                <div
+                  data-value="8"
+                  class="key-button key-button__normal number"
+                >
+                  8
+                </div>
+                <div
+                  data-value="9"
+                  class="key-button key-button__normal number"
+                >
+                  9
+                </div>
+                <div data-value="del" class="key-button key-button__del">
+                  DEL
+                </div>
+                <div
+                  data-value="4"
+                  class="key-button key-button__normal number"
+                >
+                  4
+                </div>
+                <div
+                  data-value="5"
+                  class="key-button key-button__normal number"
+                >
+                  5
+                </div>
+                <div
+                  data-value="6"
+                  class="key-button key-button__normal number"
+                >
+                  6
+                </div>
+                <div data-value="+" class="key-button key-button__normal calc">
+                  +
+                </div>
+                <div
+                  data-value="1"
+                  class="key-button key-button__normal number"
+                >
+                  1
+                </div>
+                <div
+                  data-value="2"
+                  class="key-button key-button__normal number"
+                >
+                  2
+                </div>
+                <div
+                  data-value="3"
+                  class="key-button key-button__normal number"
+                >
+                  3
+                </div>
+                <div data-value="-" class="key-button key-button__normal calc">
+                  -
+                </div>
+                <div
+                  data-value="."
+                  class="key-button key-button__normal number"
+                >
+                  .
+                </div>
+                <div
+                  data-value="0"
+                  class="key-button key-button__normal number"
+                >
+                  0
+                </div>
+                <div data-value="/" class="key-button key-button__normal calc">
+                  /
+                </div>
+                <div data-value="*" class="key-button key-button__normal calc">
+                  x
+                </div>
+                <div data-value="reset" class="key-button key-button__reset">
+                  reset
+                </div>
+                <div data-value="=" class="key-button key-button__equal">=</div>
               </div>
             </section>
           </main>
@@ -100,5 +187,7 @@
         >. Coded by <a href="#">Arkar Soe</a>.
       </div>
     </div>
+
+    <script src="app/js/main.js"></script>
   </body>
 </html>

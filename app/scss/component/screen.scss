@@ -12,6 +12,7 @@
   font-family: $spartan;
   padding: rem(20);
   margin-bottom: rem(20);
+  z-index: 3;
   &:focus {
     outline: none;
   }

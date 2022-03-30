@@ -13,10 +13,12 @@
   margin-right: rem(20);
   align-self: center;
   color: $white;
+  cursor: pointer;
   font-size: rem(12);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: $fw-normal;
+  user-select: none;
 }
 
 .theme-toggle-labels {

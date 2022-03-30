@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "compile:sass": "sass --watch app/scss/main.scss:dist/css/main.css",
-    "minicss": "sass dist/css/main.css:dist/css/main.min.css --style compressed"
+    "minify": "sass dist/css/main.css:dist/css/main.min.css --style compressed && minify app/js/main.js > dist/js/main.min.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "minify": "^8.0.4",
     "sass": "^1.49.9"
   }
 }

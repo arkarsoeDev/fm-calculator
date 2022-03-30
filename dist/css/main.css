@@ -148,10 +148,12 @@ p {
   margin-right: 1.25rem;
   align-self: center;
   color: white;
+  cursor: pointer;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
+  user-select: none;
 }
 
 .theme-toggle-labels {
@@ -216,6 +218,7 @@ p {
   font-family: "Spartan", sans-serif;
   padding: 1.25rem;
   margin-bottom: 1.25rem;
+  z-index: 3;
 }
 .screen:focus {
   outline: none;
