@@ -1,6 +1,14 @@
 @use "../util/" as *;
 .theme1 {
   background-color: $main-bg;
+
+  .attribution {
+    color: #ffffff;
+  }
+
+  .attribution a {
+    color: hsl(140, 57%, 53%);
+  }
 }
 
 .theme2 {
@@ -93,5 +101,9 @@
       background-color: $t3-key-bg-c;
       box-shadow: 0px 3px 0px $t3-key-shadow-c;
     }
+  }
+
+  .attribution {
+    color: white;
   }
 }

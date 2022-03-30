@@ -38,19 +38,32 @@ const equal = document.querySelector(".key-button__equal");
 const input = document.querySelector(".screen");
 
 let currentInput = "";
+let currentNum;
+let numArr;
 let calcNo = 0;
+let lastKey;
 //number
 keys.forEach((key) => {
   key.addEventListener("click", (e) => {
+    findLastKey();
     let data = e.currentTarget.getAttribute("data-value");
+    findCurrentNum();
     if (data === ".") {
-      let input = currentInput;
-      input = currentInput.split(/[x,+,-,/]/);
+      if (currentNum.includes(".") || !lastKey === " ") {
+        return;
+      }
+    }
+    if (currentNum.length == 1) {
       if (
-        input[input.length - 1].includes(".") &&
-        !(currentInput[currentInput.length - 1] === " ")
+        data === "0" &&
+        !currentNum.includes(".") &&
+        currentNum.includes("0")
       ) {
         return;
+      }
+      if (currentNum[0] === "0") {
+        if (data !== ".")
+          currentInput = currentInput.slice(0, currentInput.length - 1);
       }
     }
     currentInput += data;
@@ -61,11 +74,24 @@ keys.forEach((key) => {
 // calc
 calcs.forEach((calc) => {
   calc.addEventListener("click", (e) => {
+    findLastKey();
+    let data = e.currentTarget.getAttribute("data-value");
+    if (data === "-" && !(lastKey === "-")) {
+      if (lastKey === ".") {
+        return;
+      }
+      if (lastKey === " " || currentInput.length == 0) {
+        currentInput += "-";
+        input.value = currentInput;
+        return;
+      }
+    }
     if (
       currentInput.length > 0 &&
-      !(currentInput[currentInput.length - 1] === " ")
+      !(lastKey === " ") &&
+      !(lastKey === "-") &&
+      !(lastKey === ".")
     ) {
-      let data = e.currentTarget.getAttribute("data-value");
       if (data === "*") {
         currentInput += " x ";
       } else {
@@ -79,7 +105,8 @@ calcs.forEach((calc) => {
 
 //delete
 del.addEventListener("click", () => {
-  if (currentInput[currentInput.length - 1] === " ") {
+  findLastKey();
+  if (lastKey === " ") {
     currentInput = currentInput.slice(0, currentInput.length - 3);
     calcNo--;
   } else if (currentInput.length) {
@@ -96,16 +123,21 @@ reset.addEventListener("click", (e) => {
 
 //equal
 equal.addEventListener("click", () => {
-  if (
-    currentInput.length > 0 &&
-    calcNo > 0 &&
-    !(currentInput[currentInput.length - 1] === " ")
-  ) {
+  findLastKey();
+  if (currentInput.length > 0 && calcNo > 0 && !(lastKey === " ")) {
     currentInput = xFinder(currentInput);
+    currentInput = removeZero(currentInput);
     currentInput = eval(currentInput);
+    currentInput = currentInput.toString().includes(".")
+      ? +currentInput.toFixed(2)
+      : +currentInput;
     input.value = numberWithCommas(currentInput.toString());
     calcNo = 0;
-    currentInput = currentInput.toString();
+    if (isNaN(currentInput) || !isFinite(currentInput)) {
+      currentInput = "";
+    } else {
+      currentInput = currentInput.toString();
+    }
   }
 });
 
@@ -119,4 +151,34 @@ function xFinder(str) {
 // comma adder
 function numberWithCommas(x) {
   return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+//remove zero
+function removeZero(str) {
+  let strArr = [];
+  let newStr = str.split(/[\s]/);
+  newStr.map((s) => {
+    if (!isNaN(s)) {
+      s = +s.toString();
+    }
+    strArr.push(s);
+  });
+  newStr = strArr.join(" ");
+  return newStr;
+}
+
+// find currentNum
+function findCurrentNum() {
+  let regex = /x+-\//g;
+  if (regex.test(currentInput)) {
+    numArr = currentInput.split(regex);
+  } else {
+    numArr = currentInput.split(" ");
+  }
+  currentNum = numArr[numArr.length - 1];
+}
+
+// find last key
+function findLastKey() {
+  lastKey = currentInput[currentInput.length - 1];
 }
